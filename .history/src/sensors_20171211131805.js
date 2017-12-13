@@ -1,6 +1,6 @@
 import { NativeModules, DeviceEventEmitter } from 'react-native';
 import * as Rx from 'rxjs/Rx';
-const { Gyroscope: GyroNative, Accelerometer: AccNative, DeviceMotion: DeviceNative } = NativeModules;
+const { Gyroscope: GyroNative, Accelerometer: AccNative,DeviceMotion: DeviceNative } = NativeModules;
 
 const handle = {
   Accelerometer: AccNative,
@@ -36,7 +36,7 @@ function createSensorMonitorCreator(sensorType) {
       observer = obs;
       // Start the sensor manager
       RNSensors.start(sensorType, updateInterval).then(() => {
-        DeviceEventEmitter.addListener(sensorType, function (data) {
+        DeviceEventEmitter.addListener(sensorType, function(data) {
           observer.next(data);
         });
       }, (error) => {

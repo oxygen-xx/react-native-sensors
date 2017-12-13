@@ -19,10 +19,6 @@ class SensorWrapper extends React.Component {
         PropTypes.bool,
         optionsType,
       ]),
-      DeviceMotion: PropTypes.oneOfType([
-        PropTypes.bool,
-        optionsType,
-      ]),
     }),
   }
 

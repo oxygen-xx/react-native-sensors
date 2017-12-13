@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import Sensors from './sensors';
 
-const AVAILABLE_SENSORS = ['Accelerometer', 'Gyroscope', 'DeviceMotion'];
+const AVAILABLE_SENSORS = ['Accelerometer', 'Gyroscope'];
 const optionsType = PropTypes.shape({
   updateInterval: PropTypes.number,
 });
@@ -16,10 +16,6 @@ class SensorWrapper extends React.Component {
         optionsType,
       ]),
       Gyroscope: PropTypes.oneOfType([
-        PropTypes.bool,
-        optionsType,
-      ]),
-      DeviceMotion: PropTypes.oneOfType([
         PropTypes.bool,
         optionsType,
       ]),
