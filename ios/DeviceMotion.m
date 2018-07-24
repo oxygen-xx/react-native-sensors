@@ -42,6 +42,11 @@ RCT_EXPORT_METHOD(setUpdateInterval:(double) interval) {
     [self->_motionManager setDeviceMotionUpdateInterval:intervalInSeconds];
 }
 
++ (BOOL) requiresMainQueueSetup
+{
+    return YES;
+}
+
 RCT_EXPORT_METHOD(getUpdateInterval:(RCTResponseSenderBlock) cb) {
     double interval = self->_motionManager.deviceMotionUpdateInterval;
     NSLog(@"getUpdateInterval: %f", interval);

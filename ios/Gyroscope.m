@@ -42,6 +42,11 @@ RCT_EXPORT_METHOD(setUpdateInterval:(double) interval) {
     [self->_motionManager setGyroUpdateInterval:intervalInSeconds];
 }
 
++ (BOOL) requiresMainQueueSetup
+{
+    return YES;
+}
+
 RCT_EXPORT_METHOD(getUpdateInterval:(RCTResponseSenderBlock) cb) {
     double interval = self->_motionManager.gyroUpdateInterval;
     NSLog(@"getUpdateInterval: %f", interval);
